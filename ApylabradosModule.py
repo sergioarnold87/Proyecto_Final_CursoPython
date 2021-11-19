@@ -88,3 +88,37 @@ class Word:
         for c in input_word.upper():
             w.word.append(c)
         return w
+
+    def readWordFromFile(f):
+    """
+    Lee una palabra del fichero f y la devuelve como un objeto de la clase word
+    """
+    word = Word()
+    file_word = f.readline()
+    # Consideramos toda la línea salvo el salto de línea
+    for c in file_word[:-1]:
+        w.word.append(c)
+    return word
+
+
+# Clase Dictionary
+
+class Dictionary:
+
+    filepath = "/content/drive/MyDrive/Proyecto_Final_CursoPython/dictionary.txt"
+
+    @staticmethod
+    def validateWord(word):
+        """
+        Comprueba si la palabra word se encuentra en el diccionario
+        """
+        with open(Dictionary.filepath, "r") as f:
+            w = Word.readWordFromFile(f)
+            while (not w.isEmpty() and not word.areEqual(w)):
+                w = Word.readWordFromFile(f)
+
+        if w.isEmpty(): and not word.areEqual(w):
+            print("La palabra no se encuentra en el diccionario")
+            return False
+        else:
+            return True
