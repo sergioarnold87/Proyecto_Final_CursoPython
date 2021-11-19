@@ -3,7 +3,6 @@ class Pawns:
     def __init__(self):
       self.letters = []
 
-
     def addPawn(self, c):
       """
       Añade una ficha c al array de caracteres letters
@@ -18,7 +17,6 @@ class Pawns:
       for i in range(n):
           self.addPawn(c)
 
-
     def createBag(self):
       """
       Crea la bolsa con las 100 fichas del juego
@@ -28,7 +26,6 @@ class Pawns:
       bag = pd.read_csv(filepath)
       for item in bag.itertuples():
           self.addPawns(item[1], item[2])
-
 
     def showPawns(self):
       """
@@ -46,10 +43,10 @@ class Pawns:
       Toma una ficha de la bolsa de forma aleatoria y la elimina de la bolsa
       """
       from numpy import random
-      idx = random.randint(0, len(self.letters) - 1)
-      letter = self.letters[idx]
-      self.letters.remove(letter)
-      return letter
+        idx = random.randint(0, len(self.letters) - 1)
+        letter = self.letters[idx]
+        self.letters.remove(letter)
+     return letter
 
 class Word:
 
@@ -69,13 +66,13 @@ class Word:
         """
         Comprueba si dos palabras son iguales
         """
-        return self.word == w.word
+    return self.word == w.word
 
     def isEmpty(self):
         """
         Comprueba si una palabra es vacías
         """
-        return len(self.word) == 0
+    return len(self.word) == 0
 
     @classmethod
     def readWord(cls):
